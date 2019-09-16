@@ -20,11 +20,10 @@ clean:
 	rm -rf $(VENV)
 
 test_dependencies:
-	$(BIN)/pip install flake8 tox
+	$(BIN)/pip install flake8
 
 test: build test_dependencies
 	$(BIN)/flake8 myservice
-	$(BIN)/tox
 
 run:
 	FLASK_APP=myservice bin/flask run
