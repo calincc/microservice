@@ -47,8 +47,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'myservice'
-copyright = '2017, joe'
-author = 'joe'
+copyright = '2019, calincc'
+author = 'calincc'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
