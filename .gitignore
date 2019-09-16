@@ -2,6 +2,7 @@
 *.un~
 __pycache__
 .coverage
+.coveragerc
 .Python
 myservice.egg-info
 docs/build/
