@@ -13,7 +13,7 @@ with open('Pipfile.lock') as fd:
         package_name + package_data['version']
         for package_name, package_data in lock_data['develop'].items()
     ]
-print(install_requires)
+
 setup(name='myservice',
       version="0.1",
       packages=find_packages(),
