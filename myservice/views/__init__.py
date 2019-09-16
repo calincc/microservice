@@ -1,5 +1,5 @@
-from views.home import home
-from views.hello import hello
+from myservice.views.home import home
+from myservice.views.hello import hello
 
 
 blueprints = [home, hello]

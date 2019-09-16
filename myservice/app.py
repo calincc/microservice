@@ -2,7 +2,7 @@ import os
 
 from flask import Flask
 from konfig import Config
-from views import blueprints
+from myservice.views import blueprints
 
 
 _HERE = os.path.dirname(__file__)
