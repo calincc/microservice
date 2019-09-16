@@ -1,13 +1,13 @@
 from flask import Blueprint
-
+from flask.views import MethodView
 
 hello = Blueprint('hello', __name__)
 
 
-@hello.route('/hello')
-def index():
-    """Home view.
+class Hello(MethodView):
+    def get(self):
+        """Hello view.
 
-    This view will return an empty JSON mapping.
-    """
-    return {"Hello": "World"}
+        This view will return a dummy JSON mapping.
+        """
+        return {"Hello": "World"}
