@@ -2,26 +2,32 @@ Myservice
 =========
 
 
-**myservice** is a simple JSON Flask application that uses **Flakon**.
+**myservice** is a simple JSON Flask application.
 
-The application is created with :func:`flakon.create_app`:
+The application is created with :class:`Flask`:
 
 .. literalinclude:: ../../myservice/app.py
 
 
-The :file:`settings.ini` file which is passed to :func:`create_app`
-contains options for running the Flask app, like the DEBUG flag:
+The :file:`settings.ini` file which is passed to :class:`Config`
+contains options for running the Flask app:
 
 .. literalinclude:: ../../myservice/settings.ini
    :language: ini
 
 
+The :file:`.env` file which is passed to :func:`run`
+contains options for running the Flask app that are environment specific:
+
+.. literalinclude:: ../../myservice/.env
+   :language: ini
+
 Blueprint are imported from :mod:`myservice.views` and one
-Blueprint and view example was provided in :file:`myservice/views/home.py`:
+Blueprint and view example was provided in :file:`myservice/views/home.py` and :file:`myservice/views/hello.py`:
 
 .. literalinclude:: ../../myservice/views/home.py
    :name: home.py
-   :emphasize-lines: 13
+   :emphasize-lines: 14
 
 
 Views can return simple mappings (as highlighted in the example above),

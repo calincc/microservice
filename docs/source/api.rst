@@ -4,4 +4,8 @@ APIS
 
 **myservice** includes one view that's linked to the root path:
 
-.. autofunction:: myservice.views.home.index
+.. autoclass:: myservice.views.home.Home
+   :members:
+
+.. autoclass:: myservice.views.hello.Hello
+   :members:

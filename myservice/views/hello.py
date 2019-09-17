@@ -6,8 +6,6 @@ hello = Blueprint('hello', __name__)
 
 class Hello(MethodView):
     def get(self):
-        """Hello view.
-
-        This view will return a dummy JSON mapping.
+        """Hello view. This view will return a dummy JSON mapping.
         """
         return {"Hello": "World"}
