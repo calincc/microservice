@@ -5,6 +5,8 @@ verify_ssl = true
 
 [dev-packages]
 prospector = "==1.1.7"
+boom = "==1.0"
+molotov = "==1.6"
 
 [packages]
 flask = "==1.1.1"
@@ -13,6 +15,7 @@ flasgger = "==0.5.2"
 flake8 = "==3.7.8"
 flask-restful = "==0.3.7"
 python-dotenv = "==0.10.3"
+flask-profiler = "==1.8.1"
 
 [requires]
 python_version = "3.5"
