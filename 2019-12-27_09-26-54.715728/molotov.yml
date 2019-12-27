@@ -1,0 +1,13 @@
+execution:
+- executor: molotov
+  concurrency: 10
+  hold-for: 30s
+  ramp-up: 5s
+  scenario:
+    script: /var/www/flask-env/microservice/myservice/tests/load_tests/molotov/test_hello.py
+- executor: molotov
+  concurrency: 20
+  hold-for: 30s
+  ramp-up: 3s
+  scenario:
+    script: /var/www/flask-env/microservice/myservice/tests/load_tests/molotov/test_home.py

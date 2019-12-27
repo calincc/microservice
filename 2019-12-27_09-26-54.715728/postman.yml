@@ -10,3 +10,8 @@ scenarios:
 modules:
   newman:
     tools-dir: /usr/lib
+
+reporting:
+- module: final-stats
+- module: console
+- module: blazemeter

@@ -1,0 +1,35 @@
+execution:
+- concurrency: 10
+  hold-for: 30s
+  ramp-up: 5s
+  scenario: Thread Group
+
+scenarios:
+  Thread Group:
+    requests:
+    - label: home
+      method: GET
+      url: http://127.0.0.1:5000/
+    - label: hello
+      method: GET
+      url: http://127.0.0.1:5000/hello
+
+#reporting:
+#- module: final-stats
+#- module: console
+#- module: blazemeter
+#- module: passfail
+#  criteria:
+#  - class: bzt.modules.monitoring.MonitoringCriteria
+#    subject: local/cpu
+#    condition: '>'
+#    threshold: 50
+#    timeframe: 5s
+
+services:
+- module: monitoring
+  graphite:
+  - address: localhost:80
+    label: target-server
+    metrics:
+    - store.memUsage
