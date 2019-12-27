@@ -12,3 +12,4 @@ async def scenario_one(session):
 async def scenario_two(session):
     res = await session.get('http://127.0.0.1:5000/')
     assert res.status == 200
+
