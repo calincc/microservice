@@ -1,0 +1,10 @@
+execution:
+- executor: ab
+  hold-for: 30s
+  scenario: simple
+
+scenarios:
+  simple:
+    timeout: 1s
+    requests:
+    - http://127.0.0.1:5000/hello

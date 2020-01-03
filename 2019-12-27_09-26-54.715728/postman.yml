@@ -1,0 +1,17 @@
+execution:
+- executor: newman
+  scenario: simple
+
+scenarios:
+  simple:
+    script: postman.json
+    timeout: 1s
+
+modules:
+  newman:
+    tools-dir: /usr/lib
+
+reporting:
+- module: final-stats
+- module: console
+- module: blazemeter

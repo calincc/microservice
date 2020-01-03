@@ -1,0 +1,5 @@
+execution:
+- executor: pytest
+  iterations: 3  # perform 3 iterations over the entire test suite
+  scenario:
+    script: /var/www/flask-env/microservice/myservice/tests/pypytest/
