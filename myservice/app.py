@@ -22,20 +22,20 @@ app.config.update(configuration.get_map('SomeSettingsSection'))
 app.config["DEBUG"] = os.getenv('DEBUG')
 
 # You need to declare necessary configuration to initialize flask-profiler as follows:
-# app.config["flask_profiler"] = {
-#     "enabled": app.config["DEBUG"],
-#     "storage": {
-#         "engine": "sqlite"
-#     },
-#     "basicAuth": {
-#         "enabled": True,
-#         "username": "admin",
-#         "password": "admin"
-#     },
-#     "ignore": [
-#         "^/static/.*"
-#     ]
-# }
+app.config["flask_profiler"] = {
+    "enabled": app.config["DEBUG"],
+    "storage": {
+        "engine": "sqlite"
+    },
+    "basicAuth": {
+        "enabled": True,
+        "username": "admin",
+        "password": "admin"
+    },
+    "ignore": [
+        "^/static/.*"
+    ]
+}
 
 api_bp = Blueprint('api', __name__)
 api = Api(api_bp, catch_all_404s=True)

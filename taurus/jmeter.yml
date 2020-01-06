@@ -1,3 +1,4 @@
+# ~/.bzt-rc file for Online Reporting
 execution:
 - concurrency: 10
   hold-for: 30s
@@ -14,10 +15,18 @@ scenarios:
       method: GET
       url: http://127.0.0.1:5000/hello
 
-#reporting:
-#- module: final-stats
-#- module: console
-#- module: blazemeter
+reporting:
+- module: final-stats
+  summary: true
+  percentiles: true
+  failed-labels: false
+  test-duration: true
+  dump-csv: perf_result_csv.csv
+- module: console
+- module: blazemeter
+  report-name: Taurus test report
+  test: Taurus test
+  project: Taurus test project
 #- module: passfail
 #  criteria:
 #  - class: bzt.modules.monitoring.MonitoringCriteria
@@ -25,11 +34,3 @@ scenarios:
 #    condition: '>'
 #    threshold: 50
 #    timeframe: 5s
-
-services:
-- module: monitoring
-  graphite:
-  - address: localhost:80
-    label: target-server
-    metrics:
-    - store.memUsage

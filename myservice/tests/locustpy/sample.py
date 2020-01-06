@@ -8,7 +8,7 @@ class WebsiteTasks(TaskSet):
 
     @task
     def hello(self):
-        self.client.get("/hello/Calin")
+        self.client.get("/hello")
 
 
 class WebsiteUser(HttpLocust):
