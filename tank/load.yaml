@@ -1,0 +1,29 @@
+overload:
+  enabled: true
+  package: yandextank.plugins.DataUploader
+  token_file: "token.txt"
+phantom:
+  address: 127.0.0.1:5000 # [Target's address]:[target's port]
+  load_profile:
+    load_type: rps # schedule load by defining requests per second
+    schedule: line(1, 10, 10m) # starting from 1rps growing linearly to 10rps during 10 minutes
+  uris:
+    - "/hello"
+#ammo_type: uripost
+console:
+  enabled: true # enable console output
+telegraf:
+  enabled: false # let's disable telegraf monitoring for the first time
+autostop:
+  autostop:
+    - time(1s,10s)
+    - http(5xx,100%,1s)
+    - net(xx,1,30)
+    - limit(20s)
+influx:
+  enabled: true
+  address: 127.0.0.1
+  database: tank
+  tank_tag: 'mytank'
+  prefix_measurement: 'myservice_'
+  labeled: true
